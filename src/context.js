@@ -36,6 +36,7 @@ class RoomProvider extends Component {
       sortedRooms: rooms,
       loading: false,
       price: maxPrice,
+      maxPrice,
       size: maxSize
     });
   }
@@ -85,16 +86,21 @@ class RoomProvider extends Component {
     let tempRooms = [...rooms];
     // transform value
     capacity = parseInt(capacity);
+    price = parseInt(price);
 
     // filter by type
     if (type !== 'all') {
       tempRooms = tempRooms.filter(room => room.type === type);
     }
-    //filter by capacity
+    // filter by capacity
     if (capacity !== 1) {
       tempRooms = tempRooms.filter(room => room.capacity >= capacity);
     }
 
+    // filter by price
+    tempRooms = tempRooms.filter(room => room.price < price);
+
+    // change state
     this.setState({
       sortedRooms: tempRooms
     });

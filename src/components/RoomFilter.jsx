@@ -49,7 +49,7 @@ export default function RoomFilter({ rooms }) {
     <section className="filter-container">
       <Title title="search rooms" />
       <form className="filter-form">
-        {/* select type */}
+        {/* start of select type */}
         <div className="form-group">
           <label htmlFor="type">room type</label>
           <select
@@ -63,7 +63,7 @@ export default function RoomFilter({ rooms }) {
           </select>
         </div>
         {/* end of select type */}
-        {/* guests */}
+        {/* start of guests */}
         <div className="form-group">
           <label htmlFor="capacity">guests</label>
           <select
@@ -77,6 +77,21 @@ export default function RoomFilter({ rooms }) {
           </select>
         </div>
         {/* end of guests */}
+        {/* room price */}
+        <div className="form-group">
+          <label htmlFor="price">room price ${price}</label>
+          <input
+            type="range"
+            name="price"
+            min={minPrice}
+            max={maxPrice}
+            id="price"
+            value={price}
+            onChange={handleChange}
+            className="form-control"
+          />
+        </div>
+        {/* end of room price */}
       </form>
     </section>
   );
