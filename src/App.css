@@ -85,6 +85,7 @@ h6 {
   margin: 2rem 0;
   padding: 1rem;
   letter-spacing: var(--mainSpacing);
+  min-height: 65vh;
 }
 /* end of globals */
 /* Navbar */
@@ -166,7 +167,8 @@ h6 {
 }
 .roomsHero {
   background-image: url('./images/room-2.jpeg');
-  min-height: 60vh;
+  /* min-height: 60vh; */
+  min-height: 35vh;
 }
 /* End of Hero */
 /* Banner */
